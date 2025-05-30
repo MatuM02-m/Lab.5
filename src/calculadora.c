@@ -78,6 +78,7 @@ static operation_t OperationFind(calculator_t self, char operator) {
 
 /* === Public function definitions ============================================================================== */
 
+/** @brief Ver calculadora.h para más detalles. */
 calculator_t CalculatorCreate(void) {
     calculator_t self = malloc(sizeof(struct calculator_s));
     if (self != NULL) {
@@ -86,6 +87,7 @@ calculator_t CalculatorCreate(void) {
     return self;
 }
 
+/** @brief Ver calculadora.h para más detalles. */
 bool CalculatorAddOperation(calculator_t self, char operator, operation_func_t function) {
     if (!self || !function || OperationFind(self, operator)) {
         return false;
@@ -103,6 +105,7 @@ bool CalculatorAddOperation(calculator_t self, char operator, operation_func_t f
     return false;
 }
 
+/** @brief Ver calculadora.h para más detalles. */
 int CalculatorCalculate(calculator_t self, const char * expression) {
     int a = 0, b = 0;
     char operator = 0;
@@ -128,18 +131,22 @@ int CalculatorCalculate(calculator_t self, const char * expression) {
     return result;
 }
 
+/** @brief Ver calculadora.h para más detalles. */
 int OperationAdd(int a, int b) {
     return a + b;
 }
 
+/** @brief Ver calculadora.h para más detalles. */
 int OperationSubtract(int a, int b) {
     return a - b;
 }
 
+/** @brief Ver calculadora.h para más detalles. */
 int OperationMultiply(int a, int b) {
     return a * b;
 }
 
+/** @brief Ver calculadora.h para más detalles. */
 int OperationDivide(int a, int b) {
     if (b == 0) {
         return 0;
