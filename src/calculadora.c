@@ -125,4 +125,8 @@ int OperationAdd(int a, int b) {
     return a + b;
 }
 
+int OperationSubtract(int a, int b) {
+    return a - b;
+}
+
 /* === End of documentation ======================================================================================== */

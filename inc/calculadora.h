@@ -56,6 +56,8 @@ int CalculatorCalculate( calculator_t, const char * expression);
 
 int OperationAdd(int a, int b);
 
+int OperationSubtract(int a, int b);
+
 /* === End of conditional blocks =================================================================================== */
 
 #ifdef __cplusplus
