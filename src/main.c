@@ -44,17 +44,18 @@ int main(void) {
     static const char suma[] = "6+5";
     static const char resta[] = "5-2";
     static const char multiplicacion[] = "3*4";
-    // static const char division[] = "8/2";
+    static const char division[] = "7/2";
 
     calculator_t calculadora = CalculatorCreate();
     CalculatorAddOperation(calculadora, '+', OperationAdd);
     CalculatorAddOperation(calculadora, '-', OperationSubtract);
     CalculatorAddOperation(calculadora, '*', OperationMultiply);
-    //CalculatorAddOperation(calculadora, '/', OperationDivide);
+    CalculatorAddOperation(calculadora, '/', OperationDivide);
 
     printf("\nSuma: %s = %d\n", suma, CalculatorCalculate(calculadora, suma));
     printf("\nResta: %s = %d\n", resta, CalculatorCalculate(calculadora, resta));
-    printf("\nMultiplicación: %s = %d\n\n", multiplicacion, CalculatorCalculate(calculadora, multiplicacion));
+    printf("\nMultiplicación: %s = %d\n", multiplicacion, CalculatorCalculate(calculadora, multiplicacion));
+    printf("\nDivisión: %s = %d\n\n", division, CalculatorCalculate(calculadora, division));
 
     return 0;
 }
