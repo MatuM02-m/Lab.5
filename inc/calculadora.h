@@ -58,6 +58,8 @@ int OperationAdd(int a, int b);
 
 int OperationSubtract(int a, int b);
 
+int OperationMultiply(int a, int b);
+
 /* === End of conditional blocks =================================================================================== */
 
 #ifdef __cplusplus

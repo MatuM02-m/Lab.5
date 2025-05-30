@@ -129,4 +129,8 @@ int OperationSubtract(int a, int b) {
     return a - b;
 }
 
+int OperationMultiply(int a, int b) {
+    return a * b;
+}
+
 /* === End of documentation ======================================================================================== */

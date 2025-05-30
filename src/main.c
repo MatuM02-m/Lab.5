@@ -41,22 +41,20 @@ SPDX-License-Identifier: MIT
 /* === Public function implementation ============================================================================== */
 
 int main(void) {
-    static const char suma[] = "2+3";
+    static const char suma[] = "6+5";
     static const char resta[] = "5-2";
-    // static const char multiplicacion[] = "3*4";
+    static const char multiplicacion[] = "3*4";
     // static const char division[] = "8/2";
-
-    //int resultado;
 
     calculator_t calculadora = CalculatorCreate();
     CalculatorAddOperation(calculadora, '+', OperationAdd);
     CalculatorAddOperation(calculadora, '-', OperationSubtract);
-    //CalculatorAddOperation(calculadora, '*', OperationMultiply);
+    CalculatorAddOperation(calculadora, '*', OperationMultiply);
     //CalculatorAddOperation(calculadora, '/', OperationDivide);
 
     printf("\nSuma: %s = %d\n", suma, CalculatorCalculate(calculadora, suma));
-    printf("\nResta: %s = %d\n\n", resta, CalculatorCalculate(calculadora, resta));
-
+    printf("\nResta: %s = %d\n", resta, CalculatorCalculate(calculadora, resta));
+    printf("\nMultiplicación: %s = %d\n\n", multiplicacion, CalculatorCalculate(calculadora, multiplicacion));
 
     return 0;
 }
