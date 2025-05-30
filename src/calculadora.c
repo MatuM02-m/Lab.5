@@ -35,12 +35,13 @@ SPDX-License-Identifier: MIT
 
 /* === Private data type declarations ============================================================================== */
 
+//! Tipo de dato para las operaciones
 typedef struct operation_s * operation_t;
 
 struct operation_s {
-    char operator;
+    char             operator;
     operation_func_t function;
-    operation_t next;
+    operation_t      next;
 };
 
 struct calculator_s {
@@ -49,6 +50,13 @@ struct calculator_s {
 
 /* === Private function declarations =============================================================================== */
 
+/**
+ * @brief Función para encontrar una operación en la calculadora por su operador.
+ *
+ * @param calculator Puntero a la calculadora
+ * @param operator Cadena de caracteres que representa la operación a buscar
+ * @return Puntero a la operación encontrada o NULL si no se encuentra.
+ */
 static operation_t OperationFind(calculator_t calculator, char operator);
 
 /* === Private variable definitions ================================================================================ */
@@ -85,8 +93,7 @@ bool CalculatorAddOperation(calculator_t self, char operator, operation_func_t f
 
     operation_t new_operation = malloc(sizeof(struct operation_s));
 
-    if (new_operation)
-    {
+    if (new_operation) {
         new_operation->operator = operator;
         new_operation->function = function;
         new_operation->next = self->operations;
@@ -106,7 +113,7 @@ int CalculatorCalculate(calculator_t self, const char * expression) {
     }
 
     for (size_t i = 0; i < strlen(expression); i++) {
-        if((expression[i] < '0') || (expression[i] > '9')) {
+        if ((expression[i] < '0') || (expression[i] > '9')) {
             operator = expression[i];
             a = atoi(expression);
             b = atoi(expression + i + 1);

@@ -42,24 +42,58 @@ extern "C" {
 typedef struct calculator_s * calculator_t;
 
 //!Tipo de dato para las funciones de operación
-typedef int (*operation_func_t)(int, int);
+typedef int (* operation_func_t)(int, int);
 
 /* === Public variable declarations ================================================================================ */
 
 /* === Public function declarations ================================================================================ */
 
+/** @brief Función para crear una nueva calculadora
+ ** @return Un puntero a la nueva calculadora o NULL si falla
+ **/
 calculator_t CalculatorCreate(void);
 
+/** @brief Función para agregar una operación a la calculadora
+ ** @param calculator Puntero a la calculadora
+ ** @param operator El operador de la operación (por ejemplo, '+', '-', '*', '/')
+ ** @param function La función que implementa la operación
+ ** @return true si se agregó correctamente, false en caso contrario
+ **/
 bool CalculatorAddOperation(calculator_t calculator, char operator, operation_func_t function);
 
+/** @brief Función para calcular el resultado de una expresión
+ ** @param calculator Puntero a la calculadora
+ ** @param expression Cadena de caracteres que representa la expresión a calcular (por ejemplo, "6+5")
+ ** @return El resultado de la operación o 0 si falla
+ **/
 int CalculatorCalculate( calculator_t, const char * expression);
 
+/** @brief Función para realizar una suma
+ ** @param a Primer operando
+ ** @param b Segundo operando
+ ** @return Resultado de la suma
+ **/
 int OperationAdd(int a, int b);
 
+/** @brief Función para realizar una resta
+ ** @param a Primer operando
+ ** @param b Segundo operando
+ ** @return Resultado de la resta
+ **/
 int OperationSubtract(int a, int b);
 
+/** @brief Función para realizar una multiplicación
+ ** @param a Primer operando
+ ** @param b Segundo operando
+ ** @return Resultado de la multiplicación
+ **/
 int OperationMultiply(int a, int b);
 
+/** @brief Función para realizar una división
+ ** @param a Primer operando
+ ** @param b Segundo operando
+ ** @return Resultado de la división o 0 si @param b es 0
+ **/
 int OperationDivide(int a, int b);
 
 /* === End of conditional blocks =================================================================================== */
@@ -68,4 +102,4 @@ int OperationDivide(int a, int b);
 }
 #endif
 
-#endif /* PLANTILLA_H_ */
+#endif /* CALCULADORA_H_ */
