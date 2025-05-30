@@ -23,7 +23,8 @@ SPDX-License-Identifier: MIT
 
 /* === Headers files inclusions ==================================================================================== */
 
-
+#include "calculadora.h"
+#include <stdio.h>
 
 /* === Macros definitions ========================================================================================== */
 
@@ -33,8 +34,6 @@ SPDX-License-Identifier: MIT
 
 /* === Private variable definitions ================================================================================ */
 
-
-
 /* === Public variable definitions ================================================================================= */
 
 /* === Private function definitions ================================================================================ */
@@ -42,6 +41,22 @@ SPDX-License-Identifier: MIT
 /* === Public function implementation ============================================================================== */
 
 int main(void) {
+    static const char suma[] = "2+3";
+    // static const char resta[] = "5-2";
+    // static const char multiplicacion[] = "3*4";
+    // static const char division[] = "8/2";
+
+    //int resultado;
+
+    calculator_t calculadora = CalculatorCreate();
+    CalculatorAddOperation(calculadora, '+', OperationAdd);
+    //CalculatorAddOperation(calculadora, '-', OperationSubtract);
+    //CalculatorAddOperation(calculadora, '*', OperationMultiply);
+    //CalculatorAddOperation(calculadora, '/', OperationDivide);
+
+    printf("Suma: %s = %d\n", suma, CalculatorCalculate(calculadora, suma));
+
+
     return 0;
 }
 
